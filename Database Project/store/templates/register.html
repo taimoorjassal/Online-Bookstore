@@ -1,0 +1,92 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+  <title>Books</title>
+
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto text-white">
+
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+
+        <ul class="navbar-nav mr-auto text-white">
+          <li>
+
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+<img style = " display: block; margin-left: auto; margin-right: auto;padding-top: 5px;" src={% static 'images/book.jpg' %}>
+  <div class="container">
+    <form action="register" method="post">
+        {% csrf_token %}
+
+        <input type = "text" name="first_name" placeholder="First Name"><br>
+        <input type = "text" name="last_name" placeholder="Last Name"><br>
+        <input type = "text" name="username" placeholder="Username"><br>
+        <input type = "email" name="email" placeholder="Email"><br>
+        <input type = "password" name="password1" placeholder="Password"><br>
+        <input type = "password" name="password2" placeholder="Confrim Password"><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+
+    </form>
+  </div>
+
+
+
+  </div>
+
+
+  <footer class="page-footer dark bg-dark" style = " position: fixed; left: 0; bottom: 0; width: 100%;text-align: center;">
+
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h6 class="white-text">About Us</h6>
+          <p class="white-text text-lighten-4">
+            We are just 2 noobs.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+
+</body>
+
+</html>

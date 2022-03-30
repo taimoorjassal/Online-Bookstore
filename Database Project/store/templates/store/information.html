@@ -1,0 +1,24 @@
+{% extends 'store/store.html'%}
+
+{% load static %}
+{% block content %}
+
+<a  class="btn btn-outline-dark" href="{% url 'store' %}">&#x2190; Back to Store</a>
+<div class="row">
+  <div class="col-lg-4">
+    <div class="img-thumbnail">
+      <img class="thumbnail" src="{{ obj.imageURL }}">
+    </div>
+
+    <div class="box-element product">
+      <h6><b>{{ obj.name }}</b></h6>
+      <h6>By: <i>{{ obj.author }}</i></h6>
+      <h6>{{obj.description}}</h6>
+      <hr>
+      <a style="color:white;background-color:white;" class="btn btn-light" disabled href="{% url 'information' %}">.</a>
+      <h4 style="display: inline-block;float: right;">${{ obj.price|floatformat:2 }}</h4>
+    </div>
+
+  </div>
+</div>
+{% endblock content %}

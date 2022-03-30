@@ -1,0 +1,33 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+  {% for product in products %}
+  <div class="col-lg-4">
+    <div class="img-thumbnail">
+      <img class="thumbnail" src="{{ product.imageURL }}">
+    </div>
+
+    <div class="box-element product">
+      <h6><b>{{ product.name }}</b></h6>
+      <h6>{{ product.author }}</h6>
+      <hr>
+      <div></div>
+      <button data-product = {{ product.id }} data-action="add" class="btn btn-outline-secondary add-btn update-cart" 
+      style = "display: inline-block;" type="button" name="button">Add to Cart</button>
+      <h4 style="display: inline-block; float:right;">${{ product.price|floatformat:2 }}</h4>
+     
+      <form  action="{% url 'information' %}" method = "get" id = "form1">
+        <br>
+        <input class = "hidden" type="number" name="product" placeholder = "Product {{product.id}}" value = "{{product.id}}">
+        <button class="btn btn-outline-success" style = "display: inline-block;" value="{{product.id}}">View More</button>
+      </form>
+    
+      
+    
+    </div>
+  </div>
+
+{% endfor %}
+</div>
+{% endblock content %}
